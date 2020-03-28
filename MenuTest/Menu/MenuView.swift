@@ -32,6 +32,7 @@ public class MenuView: UIView, MenuThemeable, UIGestureRecognizerDelegate {
     
     private var contents: MenuContents?
     private var theme: MenuTheme
+    private var config: MenuConfig
     private var longPress: UILongPressGestureRecognizer!
     private var tapGesture: UITapGestureRecognizer!
     
@@ -53,10 +54,11 @@ public class MenuView: UIView, MenuThemeable, UIGestureRecognizerDelegate {
         }
     }
     
-    public init(title: String, theme: MenuTheme, itemsSource: @escaping () -> [MenuItem]) {
+    public init(title: String, theme: MenuTheme, config: MenuConfig, itemsSource: @escaping () -> [MenuItem]) {
         self.itemsSource = itemsSource
-        self.title = title
+        self.title = title + "ABC"
         self.theme = theme
+        self.config = config
         
         super.init(frame: .zero)
         
@@ -64,6 +66,7 @@ public class MenuView: UIView, MenuThemeable, UIGestureRecognizerDelegate {
         titleLabel.textColor = theme.darkTintColor
         titleLabel.textAlignment = .center
         titleLabel.setContentHuggingPriority(.required, for: .horizontal)
+        titleLabel.font = UIFont.systemFont(ofSize: 28)
         
         let clippingView = UIView()
         clippingView.clipsToBounds = true

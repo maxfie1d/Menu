@@ -67,10 +67,17 @@ public struct ShortcutMenuItem: Equatable, MenuItem {
     public var action: () -> Void = {}
     
     public let name: String
+    public let font: UIFont
     public let shortcut: Shortcut?
     
-    public init(name: String, shortcut: (UIKeyModifierFlags, String)? = nil, action: @escaping () -> Void) {
+    public init(
+        name: String,
+        font: UIFont,
+        shortcut: (UIKeyModifierFlags, String)? = nil,
+        action: @escaping () -> Void
+    ) {
         self.name = name
+        self.font = font
         self.action = action
         
         if let (modifiers, key) = shortcut {

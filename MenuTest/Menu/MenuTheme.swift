@@ -31,7 +31,6 @@ public protocol MenuTheme {
 }
 
 public struct LightMenuTheme: MenuTheme {
-    
     public let font = UIFont.systemFont(ofSize: 16, weight: .medium)
     public let textColor = UIColor.black
     public let brightTintColor = UIColor.white
@@ -45,6 +44,20 @@ public struct LightMenuTheme: MenuTheme {
     public let shadowOpacity: Float = 0.3
     public let shadowRadius: CGFloat = 7.0
     public let separatorColor = UIColor(white: 0, alpha: 0.1)
+    
+    public init() {}
+}
+
+public protocol MenuConfig {
+    var titleFont: UIFont { get }
+}
+
+public struct DefaultMenuConfig : MenuConfig {
+    public let titleFont: UIFont
+        = UIFont.systemFont(ofSize: 16)
+//    public init(titleFont: UIFont) {
+//        self.titleFont = titleFont
+//    }
     
     public init() {}
 }

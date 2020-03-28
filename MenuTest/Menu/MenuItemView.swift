@@ -122,6 +122,7 @@ public class ShortcutMenuItemView: UIView, MenuItemView, MenuThemeable {
         super.init(frame: .zero)
         
         nameLabel.text = item.name
+        nameLabel.font = item.font
         
         addSubview(nameLabel)
 
