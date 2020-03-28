@@ -23,6 +23,7 @@ Pod::Spec.new do |spec|
   spec.screenshots  = "https://codea.io/blog/wp-content/uploads/2019/01/clipboard-3.png", "https://codea.io/blog/wp-content/uploads/2019/01/Image-2-1024x654.png"
 
   spec.license      = { :type => "MIT", :file => "LICENSE" }
+  spec.homepage  = "https://twitter.com/maxfie1d"
 
   spec.author             = { "maxfie1d" => "maxfield.walker@gmail.com" }
 
